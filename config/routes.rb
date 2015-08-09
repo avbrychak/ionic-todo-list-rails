@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     resources :lists do 
       resources :tasks do 
         put 'complete', on: :member
+        put 'set_priority', on: :member
       end
     end     
   end 
-  # root 'welcome#index'
 end

@@ -1,12 +1,13 @@
 class Task < ActiveRecord::Base
   belongs_to :list
 
-  after_create :set_default_state
+  after_create :set_defaults
 
   protected
 
-  def set_default_state
+  def set_defaults
     self.completed = false
+    self.target_priority = 0
   end
 
 end
